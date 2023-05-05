@@ -19,6 +19,7 @@ Your users should be able to:
 ## Built with
 
 - [React](https://reactjs.org/) - JS library
+- Framer Motion - React animation library
 - [Styled Components](https://styled-components.com/) - For styles
 - Semantic HTML5 markup
 - Flexbox
