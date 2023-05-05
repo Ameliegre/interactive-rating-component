@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import illustration from './images/illustration-thank-you.svg' 
+import { motion } from 'framer-motion'
 
-const WrapperAnswer = styled.div`
+const WrapperAnswer = styled(motion.div)`
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -36,12 +37,18 @@ const TextAnswer = styled.p `
 function Answer({number}) {
     console.log(number)
     return(
-        <WrapperAnswer>
+        <WrapperAnswer 
+            initial={{ opacity: 0, scale: 0.5 }} 
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01]
+            }} >
             <img src={illustration} alt='logo'></img>
             <SelectAnswer>You selected {number} out of 5</SelectAnswer>
             <TitleAnswer>Thank you!</TitleAnswer>
             <TextAnswer>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</TextAnswer>
-            
         </WrapperAnswer>
     );
 }

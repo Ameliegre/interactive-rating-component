@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import Answer from './answer'
 import starIcon from './images/icon-star.svg'
+import { motion } from 'framer-motion'
 
 const Star = styled.i`
     background-color: hsl(213, 19%, 18%);
@@ -37,7 +38,7 @@ const NumberButton = styled.button`
     }
 `
 
-const SubmitButton = styled.button`
+const SubmitButton = styled(motion.button)`
     border-radius: 20px;
     border: none;
     color: white;
@@ -87,7 +88,7 @@ function Question() {
                     <h1>How did we do?</h1>
                     <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
                     <NumberList>{listNumber}</NumberList>
-                    <SubmitButton type='submit'>S U B M I T</SubmitButton>
+                    <SubmitButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} type='submit'>S U B M I T</SubmitButton>
                 </form> 
             )}  
         </> 
